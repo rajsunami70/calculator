@@ -60,6 +60,11 @@
       background: red;
       color: white;
     }
+    .delete {
+     background: #555;
+     color: white;
+    }
+
     .num {
       background: #444;
       color: white;
@@ -70,27 +75,41 @@
   <div class="calculator">
     <input type="text" id="display" disabled>
     <div class="buttons">
-      <button class="clear" onclick="clearDisplay()">C</button>
-      <button class="operator" onclick="appendValue('/')">÷</button>
-      <button class="operator" onclick="appendValue('*')">×</button>
-      <button class="operator" onclick="appendValue('-')">−</button>
-
-      <button class="num" onclick="appendValue('7')">7</button>
-      <button class="num" onclick="appendValue('8')">8</button>
-      <button class="num" onclick="appendValue('9')">9</button>
-      <button class="operator" onclick="appendValue('+')">+</button>
-
-      <button class="num" onclick="appendValue('4')">4</button>
-      <button class="num" onclick="appendValue('5')">5</button>
-      <button class="num" onclick="appendValue('6')">6</button>
-      <button class="equal" onclick="calculate()">=</button>
+      <!-- <button class="clear" onclick="clearDisplay()">C</button> -->
+      <!-- <button class="delete" onclick="deleteOne()">⌫</button> -->
+      <!-- <button class="operator" onclick="appendValue('/')">÷</button> -->
+      <!-- <button class="operator" onclick="appendValue('*')">×</button> -->
+      <!-- <button class="operator" onclick="appendValue('-')">−</button> -->
 
       <button class="num" onclick="appendValue('1')">1</button>
       <button class="num" onclick="appendValue('2')">2</button>
       <button class="num" onclick="appendValue('3')">3</button>
+      <button class="num" onclick="appendValue('4')">4</button>
+      <!-- <button class="operator" onclick="appendValue('+')">+</button> -->
+
+      <!-- <button class="num" onclick="appendValue('4')">4</button> -->
+      <button class="num" onclick="appendValue('5')">5</button>
+      <button class="num" onclick="appendValue('6')">6</button>
+      <!-- <button class="equal" onclick="calculate()">=</button> -->
+
+      <button class="num" onclick="appendValue('7')">7</button>
+      <button class="num" onclick="appendValue('8')">8</button>
+      <button class="num" onclick="appendValue('9')">9</button>
       
       <button class="num" onclick="appendValue('0')">0</button>
+      <!-- <button class="equal" onclick="calculate()">=</button> -->
       <button class="num" onclick="appendValue('.')">.</button>
+      <button class="operator" onclick="appendValue('+')">+</button>
+
+      <button class="equal" onclick="calculate()">=</button>
+
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button class="delete" onclick="deleteOne()">⌫</button>
+      <button class="operator" onclick="appendValue('/')">÷</button>
+      <button class="operator" onclick="appendValue('*')">×</button>
+      <button class="operator" onclick="appendValue('-')">−</button>
+      <!-- <button class="operator" onclick="appendValue('+')">+</button> -->
+
     </div>
   </div>
 
@@ -112,6 +131,11 @@
         display.value = "Error";
       }
     }
+     // Delete last digit
+    function deleteOne() {
+    display.value = display.value.slice(0, -1);
+    }
+
   </script>
 </body>
 </html>
